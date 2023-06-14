@@ -17,6 +17,23 @@
 
 ------
 
+### Решение 1
+
+Для настройки интерфейса Gi0/0 на обоих маршрутизаторах используем следующие команды:
+
+![1-1](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/07047bf6-ebea-4690-bc71-5e57a8777b89)
+
+
+
+[1-2](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/19fb92a8-77a1-4d0b-8858-0da2699a3581)
+
+
+При обрыве связи с одним маршрутизатором данные идут через второй:
+![1-3](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/ddf9cc88-409e-43fd-b62a-b1ea8d81f78f)
+
+
+
+------
 ### Задание 2
 - Запустите две виртуальные машины Linux, установите и настройте сервис Keepalived как в лекции, используя пример конфигурационного [файла](1/keepalived-simple.conf).
 - Настройте любой веб-сервер (например, nginx или simple python server) на двух виртуальных машинах
@@ -26,4 +43,25 @@
 
 ------
 
-### Решение 1
+### Решение 2 
+
+Установил keepalived и nginx на два сервера с адресами 10.44.44.120 и 10.44.44.121. Присвоили виртуальный адрес 10.44.44.125
+
+![2-1](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/8e28fa96-db22-4b29-bc65-126a6a7af020)
+
+
+![2-1-1](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/47393eed-837b-4fec-aafc-c3e484bd52f5)
+
+
+В index.html на каждом из серверов прописали его ip адрес:
+
+![2-2](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/f9486a2a-489d-4536-8809-94ec4ace2b1d)
+
+![2-3](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/d9cae7ed-e970-4eda-a8a1-cb2bd7e68fda)
+
+В конфигурационном файле keepalived прописали следить за скриптом (скрипт во вложении, он отслеживает состояние 80 порта и наличие файла index.html)
+При "падении" службы nginx на мастер-сервере по адресу 10.44.44.125 доступен второй сервер.
+![2-4](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/d64dfd62-a855-4ea1-8b4b-c6e92b187508)
+
+
+
