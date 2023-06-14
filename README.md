@@ -25,7 +25,7 @@
 
 
 
-[1-2](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/19fb92a8-77a1-4d0b-8858-0da2699a3581)
+![1-2](https://github.com/SKA1010/HW_Disaster_Recovery_FHRP_-_Keepalived/assets/125235217/19fb92a8-77a1-4d0b-8858-0da2699a3581)
 
 
 При обрыве связи с одним маршрутизатором данные идут через второй:
