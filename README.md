@@ -1,4 +1,4 @@
-# HW_Disaster_Recovery_FHRP_-_Keepalived
+# HW_Disaster_Recovery_FHRP_-_Keepalived Konstantin Sychugov
 
 # Домашнее задание к занятию 1 «Disaster recovery и Keepalived»
 
